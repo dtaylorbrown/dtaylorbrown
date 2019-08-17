@@ -1,5 +1,5 @@
 # daniellataylor.co.uk
 
-- Gatsby / MD for personal site
+- 🚀 Gatsby / MD for personal site
 
 
