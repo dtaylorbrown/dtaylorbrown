@@ -1,5 +1,5 @@
-# Daniella Taylor - Personal Website
+# daniellataylor.co.uk
 
-- UI 
+- Gatsby / MD for personal site
 
 
