@@ -1,20 +1,32 @@
 import React from "react"
-import { Link } from "gatsby"
+import styled from 'styled-components';
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
+const H1 = styled.h1`
+  color: rebeccapurple;
+`;
+
+const PTag = styled.p`
+  color: rebeccapurple;
+`;
+
+const StyledWrap = styled.div`
+  max-width: 300px;
+  margin-bottom: 1.45rem;
+`;
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <H1>Hi people</H1>
+    <PTag>Welcome to your new Gatsby site.</PTag>
+    <PTag>Now go build something great.</PTag>
+    <StyledWrap>
       <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    </StyledWrap>
   </Layout>
 )
 
