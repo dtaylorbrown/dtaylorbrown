@@ -19,13 +19,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-ghost`,
-      options: {
-        apiUrl: `${process.env.API_URL}`,
-        contentApiKey: `${process.env.API_KEY}`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-ghost`,
+    //   options: {
+    //     apiUrl: `${process.env.API_URL}`,
+    //     contentApiKey: `${process.env.API_KEY}`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
