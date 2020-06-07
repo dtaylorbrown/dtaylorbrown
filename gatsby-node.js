@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
             allGhostPost(sort: { order: ASC, fields: published_at }) {
                 edges {
                     node {
+                        ghostId
                         slug
                     }
                 }
@@ -28,16 +29,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Create post pages
     posts.forEach(({ node }) => {
-        // This part here defines, that our posts will use
-        // a `/:slug/` permalink.
-        node.url = `/${node.slug}/`;
-
+        node.url = `/words/${node.slug}/`;
         createPage({
             path: node.url,
             component: postTemplate,
             context: {
-                // Data passed to context is available
-                // in page queries as GraphQL variables.
+                id: node.ghostId,
                 slug: node.slug,
             },
         });
