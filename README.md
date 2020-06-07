@@ -2,7 +2,7 @@
 
 ### Personal Site
 
-Gatsby Front End
+Gatsby Front End hosted on Netlify
 
 ## blog
 
