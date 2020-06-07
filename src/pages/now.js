@@ -1,11 +1,14 @@
 import React from 'react';
 
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+
 const Now = () => {
     return (
-        <React.Fragment>
+        <Layout>
+            <SEO title="Now" />
             <h1>Now</h1>
-            <p>I want to know about now</p>
-        </React.Fragment>
+        </Layout>
     );
 };
 

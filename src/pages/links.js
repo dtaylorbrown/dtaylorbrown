@@ -3,13 +3,13 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const Words = () => {
+const Links = () => {
     return (
         <Layout>
-            <SEO title="Words" />
-            <h1>Words</h1>
+            <SEO title="Links" />
+            <h1>Links</h1>
         </Layout>
     );
 };
 
-export default Words;
+export default Links;

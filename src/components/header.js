@@ -1,42 +1,111 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react';
+import { Link } from 'gatsby';
+import styled, { keyframes } from 'styled-components';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import Url from '../components/url';
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
-export default Header
+const SiteHeader = styled.header`
+    display: flex;
+    align-items: center;
+    height: 150px;
+    padding: 30px;
+`;
+
+const Logo = styled.div`
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Gloria Hallelujah', cursive;
+    user-select: none;
+    cursor: pointer;
+    &:after {
+        content: '';
+        display: block;
+        background: #ffc498;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        clip-path: polygon(
+            20% 0%,
+            0% 20%,
+            30% 50%,
+            0% 80%,
+            20% 100%,
+            50% 70%,
+            80% 100%,
+            100% 80%,
+            70% 50%,
+            100% 20%,
+            80% 0%,
+            50% 30%
+        );
+    }
+    &:hover {
+        &:after {
+            animation: ${rotate} 1.75s linear;
+        }
+    }
+    span {
+        font-size: 38px;
+    }
+`;
+
+const LogoLink = styled(Link)`
+    color: #382f32;
+    text-decoration: none;
+`;
+
+const Nav = styled.nav`
+    flex-grow: 1;
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        li {
+            padding: 20px;
+            font-size: 22px;
+        }
+    }
+`;
+
+const Header = () => {
+    return (
+        <SiteHeader>
+            <LogoLink to={'/'}>
+                <Logo>
+                    <span>DTB</span>
+                </Logo>
+            </LogoLink>
+            <Nav>
+                <ul>
+                    <li>
+                        <Url to="/now">Now</Url>
+                    </li>
+                    <li>
+                        <Url to="/words">Words</Url>
+                    </li>
+                    <li>
+                        <Url to="/words">Links</Url>
+                    </li>
+                </ul>
+            </Nav>
+        </SiteHeader>
+    );
+};
+
+export default Header;
