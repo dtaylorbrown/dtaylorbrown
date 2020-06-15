@@ -13,6 +13,14 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+            allGhostPage {
+                edges {
+                    node {
+                        ghostId
+                        slug
+                    }
+                }
+            }
         }
     `);
 
@@ -23,9 +31,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Extract query results
     const posts = result.data.allGhostPost.edges;
+    const pages = result.data.allGhostPage.edges;
 
     // Load templates
     const postTemplate = path.resolve(`./src/templates/post.js`);
+    const pageTemplate = path.resolve(`./src/templates/page.js`);
 
     // Create post pages
     posts.forEach(({ node }) => {
@@ -33,6 +43,18 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
             path: node.url,
             component: postTemplate,
+            context: {
+                id: node.ghostId,
+                slug: node.slug,
+            },
+        });
+    });
+
+    // Create pages pages
+    pages.forEach(({ node }) => {
+        createPage({
+            path: node.slug,
+            component: pageTemplate,
             context: {
                 id: node.ghostId,
                 slug: node.slug,

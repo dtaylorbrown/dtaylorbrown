@@ -21,6 +21,7 @@ const SiteHeader = styled.header`
     padding: 30px;
 `;
 
+// todo make this it's own component
 const Logo = styled.div`
     width: 85px;
     height: 85px;
@@ -100,7 +101,7 @@ const Header = () => {
                         <Url to="/words">Words</Url>
                     </li>
                     <li>
-                        <Url to="/words">Links</Url>
+                        <Url to="/links">Links</Url>
                     </li>
                 </ul>
             </Nav>
