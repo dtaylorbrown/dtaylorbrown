@@ -18,7 +18,6 @@ const SiteHeader = styled.header`
     display: flex;
     align-items: center;
     height: 150px;
-    padding: 30px;
 `;
 
 // todo make this it's own component
@@ -96,12 +95,6 @@ const Header = () => {
                 <ul>
                     <li>
                         <Url to="/now">Now</Url>
-                    </li>
-                    <li>
-                        <Url to="/words">Words</Url>
-                    </li>
-                    <li>
-                        <Url to="/links">Links</Url>
                     </li>
                 </ul>
             </Nav>
