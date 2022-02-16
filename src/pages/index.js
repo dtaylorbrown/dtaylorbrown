@@ -1,31 +1,44 @@
-import * as React from "react"
+import * as React from 'react';
+import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "Karla",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 32,
-  maxWidth: 320,
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
+import Nav from '../components/nav';
+
+const Main = styled.main`
+    color: #232129;
+    padding: 96px;
+    font-family: 'Karla';
+`;
+
+const Heading = styled.h1`
+    margin-top: 0;
+    margin-bottom: 32px;
+    max-width: 320px;
+`;
 
 // markup
 const IndexPage = () => {
-  return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>👋 Hello, I'm Daniella</h1>
-      <p style={paragraphStyles}>
-        I'm a full-stack javascript developer who specialises in front-end!
-      </p>
-    </main>
-  )
-}
+    return (
+        <Main>
+            <title>Home Page</title>
+            <Nav />
+            <StaticImage
+                src="../images/me.jpg"
+                alt="An image of Daniella"
+                placeholder="blurred"
+                layout="fixed"
+                width={200}
+                aspectRatio={1}
+                style={{
+                    borderRadius: '50%',
+                }}
+                transformOptions={{
+                    cropFocus: 'top',
+                }}
+            />
+            <Heading>👋 Hey, I'm Daniella</Heading>
+        </Main>
+    );
+};
 
-export default IndexPage
+export default IndexPage;
