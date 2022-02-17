@@ -4,9 +4,8 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 
 const Main = styled.main`
-    color: #232129;
+    color: ${props => props.theme.colors.primaryDark};
     padding: 96px;
-    font-family: 'Karla';
 `;
 
 const Heading = styled.h1`

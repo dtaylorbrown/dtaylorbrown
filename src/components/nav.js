@@ -8,7 +8,7 @@ const Navi = styled.nav`
         color: ${props => props.theme.colors.primaryDark};
         padding-right: 30px;
         &.active {
-            color: rebeccapurple;
+            color: ${props => props.theme.colors.secondaryDark};
         }
     }
 `;

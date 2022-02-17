@@ -10,9 +10,9 @@ const themeStyles = {
         ...fontStyles,
         colors: {
             background: '#FFFFFF',
-            primaryDark: '#AF5A65',
-            primaryMedium: '#DEBDC2',
-            primaryLight: '#E9DCDE',
+            primaryDark: '#663399',
+            primaryMedium: '#9370db',
+            primaryLight: '#cec8ef',
             secondaryDark: '#5A5052',
             secondaryMedium: '#BBBBBB',
             secondaryLight: '#DCDCDC',
