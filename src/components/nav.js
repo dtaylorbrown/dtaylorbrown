@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 const Navi = styled.nav`
     margin-bottom: 40px;
     a {
-        color: black;
+        color: ${props => props.theme.colors.primaryDark};
         padding-right: 30px;
         &.active {
             color: rebeccapurple;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Nav from '../components/nav';
+import Layout from '../components/layout';
 
 const Main = styled.main`
     color: #232129;
@@ -17,11 +17,11 @@ const Heading = styled.h1`
 
 const WordsPage = () => {
     return (
-        <Main>
-            <title>Words</title>
-            <Nav />
-            <Heading>📚 Words - some blog bits</Heading>
-        </Main>
+        <Layout pageTitle="Words">
+            <Main>
+                <Heading>📚 Words - some blog bits</Heading>
+            </Main>
+        </Layout>
     );
 };
 
