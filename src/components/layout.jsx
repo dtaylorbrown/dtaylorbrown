@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
-import Nav from '../components/nav';
+import Nav from './nav';
 import themeStyles from '../theme';
 
 const GlobalStyles = createGlobalStyle`
