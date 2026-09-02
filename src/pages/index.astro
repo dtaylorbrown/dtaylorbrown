@@ -2,22 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
+<Layout
+	title="DTB — Software Engineer"
+	description="DTB, a software engineer. Notes, projects and CV."
+>
+	<div class="hero">
 		<h1>DTB</h1>
 		<p>Software Engineer!</p>
-	</main>
+	</div>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
+	.hero {
 		text-align: center;
 	}
 	h1 {

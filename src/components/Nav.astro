@@ -1,0 +1,64 @@
+---
+interface NavLink {
+	href: string;
+	label: string;
+}
+
+const links: NavLink[] = [
+	{ href: '/about', label: 'About' },
+	{ href: '/blog', label: 'Blog' },
+	{ href: '/projects', label: 'Projects' },
+	{ href: '/cv', label: 'CV' },
+];
+
+// Trailing slashes are stripped so `/blog` and `/blog/` match the same link,
+// and a nested route such as `/blog/a-post` still marks Blog as current.
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`);
+---
+
+<nav class="main-nav" aria-label="Main">
+	<ul>
+		{
+			links.map(({ href, label }) => (
+				<li>
+					<a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>
+
+<style>
+	.main-nav {
+		padding: 1rem;
+	}
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1.5rem;
+		justify-content: center;
+		margin: 0 auto;
+		padding: 0;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		list-style: none;
+	}
+	a {
+		display: inline-block;
+		padding: 0.25rem 0;
+		color: rgb(var(--accent-light));
+		font-size: 1.125rem;
+		text-decoration: none;
+		border-bottom: 2px solid transparent;
+	}
+	a:hover,
+	a:focus-visible {
+		color: white;
+		border-bottom-color: rgb(var(--accent));
+	}
+	a[aria-current='page'] {
+		color: white;
+		border-bottom-color: rgb(var(--accent-light));
+	}
+</style>
